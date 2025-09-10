@@ -5,9 +5,9 @@ function fetchOrders() {
       ordersDiv.innerHTML = '<i>No orders yet.</i>';
       return;
     }
-    let html = '<table><tr><th>Name</th><th>Pizza</th><th>Ingredients</th></tr>';
+    let html = '<table><tr><th class="name-col">Name</th><th class="pizza-col">Pizza</th><th class="ing-col">Ingredients</th></tr>';
     for (const o of orders) {
-      html += `<tr><td>${o.name}</td><td>${o.pizza}</td><td>${[...(o.ingredients||[]), ...(o.customIngredients||[])].join(', ')}</td></tr>`;
+      html += `<tr><td class="name-col">${o.name}</td><td class="pizza-col">${o.pizza}</td><td class="ing-col">${[...(o.ingredients||[]), ...(o.customIngredients||[])].join(', ')}</td></tr>`;
     }
     html += '</table>';
     ordersDiv.innerHTML = html;
